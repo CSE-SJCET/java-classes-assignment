@@ -15,10 +15,14 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
 
-    - name: Compile Java code
-      run: javac -d out src/*.java test/*.java
+    - name: Download JUnit Standalone JAR
+      run: |
+        mkdir lib
+        wget -O lib/junit.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.3/junit-platform-console-standalone-1.9.3.jar
+
+    - name: Compile Java code with JUnit
+      run: javac -cp "lib/junit.jar" -d out src/*.java test/*.java
 
     - name: Run tests
       run: |
-        wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.3/junit-platform-console-standalone-1.9.3.jar
-        java -jar junit-platform-console-standalone-1.9.3.jar --classpath out --scan-classpath
+        java -jar lib/junit.jar --classpath out --scan-classpath
