@@ -7,7 +7,7 @@ class Student{
           rollnumber=65;
           grade='A';
      }
-     public void displayStudent(){
+     public void displayDetails(){
           System.out.println("name:\t"+name);
           System.out.println("rollnumber:\t"+rollnumber);
           System.out.println("grade:\t"+grade);
@@ -16,7 +16,7 @@ class Student{
 public class Main {
       public static void main(String[] args) {
            Student student=new Student();
-           student.displayStudent();
+           student.displayDetails();
     }
 }
 
