@@ -1,8 +1,22 @@
-     // TODO: Create a class called Student with name, rollNumber, and grade
-
-    // TODO: Create a method to display student details
+class Student{
+     String name;
+     int rollnumber;
+     char grade;
+     Student(){
+          name="Sidharth.s";
+          rollnumber=65;
+          grade='A';
+     }
+     public void displayStudent(){
+          System.out.println("name:\t"+name);
+          System.out.println("rollnumber:\t"+rollnumber);
+          System.out.println("grade:\t"+grade);
+     }
+}
 public class Main {
       public static void main(String[] args) {
-        // TODO: Create a Student object and call the method to display details
+           Student student=new Student();
+           student.displayStudent();
     }
 }
+
